@@ -33,6 +33,10 @@ const App = () => {
 					setArticles(data.data.children);
 				}
 			});
+		})
+		.catch(e => {
+			console.log(e);
+			alert('FAILED: Error. Failed to fetch. Please try another subreddit')
 		});
 	}
 
@@ -50,8 +54,10 @@ const App = () => {
 		<div>
 			<header>
 				<h1>Search for Subreddit</h1>
-				<input type='text' defaultValue='cats' id="search-bar"></input>
-				<button onClick={handleChange}>Submit</button>
+				<div className="form">
+					<input type='text' defaultValue='cats' id="search-bar"></input>
+					<button onClick={handleChange}>Search</button>
+				</div>
 			</header>
 			{(articles !== null) ? articles.map((article, index) => <Article key={index} article={article.data}></Article>) : ""}
 		</div>
