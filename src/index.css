@@ -23,7 +23,7 @@ header h1 {
 
 article {
     border-bottom: solid rgb(0, 0, 0) .10rem;
-    height: 9rem;
+    /* height: 9rem; */
     background-color: #023c87;
     transition: .5s;
     overflow: hidden;
@@ -49,4 +49,10 @@ input {
 
 .form {
     padding-bottom: .5rem;
+}
+
+@media only screen and (max-width:519px) {
+    header h1 {
+        font-size: 3rem;
+    }
 }
